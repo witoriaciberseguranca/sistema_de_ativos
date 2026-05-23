@@ -1,12 +1,3 @@
 {
-    "ativos": [
-        {
-            "id": 1,
-            "hostname": "renata",
-            "responsavel": "luiza",
-            "setor": "rh",
-            "tipo": "nootebook",
-            "vulnerabilidades": []
-        }
-    ]
+    "ativos": []
 }

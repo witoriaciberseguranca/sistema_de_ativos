@@ -84,3 +84,27 @@ def atualizar_ativo():
             return
 
     print("\nAtivo não encontrado.")
+    
+def deletar_ativo():
+
+    dados = carregar_dados()
+
+    try:
+        id_ativo = int(input("Digite o ID do ativo que deseja deletar: "))
+
+    except ValueError:
+        print("ID inválido.")
+        return
+
+    for ativo in dados["ativos"]:
+
+        if ativo["id"] == id_ativo:
+
+            dados["ativos"].remove(ativo)
+
+            salvar_dados(dados)
+
+            print("\nAtivo removido com sucesso.")
+            return
+
+        print("\nAtivo não encontrado.")

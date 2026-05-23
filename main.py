@@ -1,5 +1,5 @@
 from enums import TipoAtivo
-from ativos import cadastrar_ativo, listar_ativos, atualizar_ativo
+from ativos import cadastrar_ativo, listar_ativos, atualizar_ativo, deletar_ativo
 
 while True:
 
@@ -8,7 +8,8 @@ while True:
     print("2 - Listar tipos de ativos")
     print("3 - Listar ativos")
     print("4 - Atualizar ativo")
-    print("5 - Sair")
+    print("5 - Deletar ativo")
+    print("6 - Sair")
 
     opcao = input("Escolha uma opção: ")
 
@@ -32,6 +33,11 @@ while True:
         atualizar_ativo()
 
     elif opcao == "5":
+
+        deletar_ativo()
+    
+    
+    elif opcao == "6":
 
         print("\nSistema encerrado.")
         break
