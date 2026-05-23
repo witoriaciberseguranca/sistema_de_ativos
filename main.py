@@ -1,7 +1,9 @@
 from enums import TipoAtivo
+from json_utils import carregar_dados
 
-from enums import TipoAtivo
-
+dados =  carregar_dados()
+print("banco carregado:")
+print(dados)
 
 while True:
 
@@ -13,7 +15,7 @@ while True:
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
-        print("\nCadastro de ativo em desenvolvimento...")
+        print("\nCadastro de ativo")
 
     elif opcao == "2":
 
