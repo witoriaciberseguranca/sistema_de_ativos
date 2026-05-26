@@ -108,3 +108,70 @@ def deletar_ativo():
             return
 
         print("\nAtivo não encontrado.")
+
+def cadastrar_vulnerabilidade():
+
+    dados = carregar_dados()
+    
+    try:
+        id_ativo = int(input("Digite o ID do ativo:"))
+
+    except ValueError:
+        print("ID inválido.")
+        return
+    
+    for ativo in dados["ativos"]:
+         
+        if ativo["id"] == id_ativo:
+        
+            descricao = input("Descreva a vulmerabilidade : ")
+            severidade = input("Severidade:")
+            status = input("Status:")
+
+            vulmerabilidade = {
+                "descricao": descricao,
+                "severidade": severidade,
+                "status": status
+
+            }
+
+            ativo["vulnerabilidades"].append(vulmerabilidade)
+
+            salvar_dados(dados)
+
+            print("\nVulnerabilidades cadastrada com sucesso.")
+            return
+        
+def visualizar_vulnerabilidade():
+        
+    dados = carregar_dados()
+
+    try:
+        id_ativo = int(input("Digite o ID do ativo: "))
+
+    except ValueError:
+        print("ID inválido. ")
+        return
+    
+    for ativo in dados["ativos"]:
+
+        if ativo["id"] == id_ativo:
+            
+            vulnerabilidades = ativo["vulnerabilidades"]
+
+            if len(vulnerabilidades) == 0:
+
+                print("\n Este ativo não passui vulnerabilidades.")
+                return
+            
+            for vulnerabilidade in vulnerabilidades:
+
+                print(f"""
+Descrição: {vulnerabilidade["descricao"]}
+Severidade: {vulnerabilidade["severidade"]}
+Status: {vulnerabilidade["status"]}
+""")
+                return
+
+        print("\nAtivo não encontrado.")
+
