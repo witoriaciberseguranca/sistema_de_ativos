@@ -1,5 +1,5 @@
 from enums import TipoAtivo
-from ativos import cadastrar_ativo, listar_ativos, atualizar_ativo, deletar_ativo
+from ativos import cadastrar_ativo, listar_ativos, atualizar_ativo, deletar_ativo, cadastrar_vulnerabilidade, visualizar_vulnerabilidade
 
 while True:
 
@@ -9,7 +9,9 @@ while True:
     print("3 - Listar ativos")
     print("4 - Atualizar ativo")
     print("5 - Deletar ativo")
-    print("6 - Sair")
+    print("6 - cadatrar vulnerabilidade")
+    print("7 - visualizar vulnerabilidades")
+    print("8 - Sair")
 
     opcao = input("Escolha uma opção: ")
 
@@ -36,8 +38,15 @@ while True:
 
         deletar_ativo()
     
-    
     elif opcao == "6":
+
+        cadastrar_vulnerabilidade()
+    
+    elif opcao == "7":
+
+        visualizar_vulnerabilidade()
+
+    elif opcao == "8":
 
         print("\nSistema encerrado.")
         break

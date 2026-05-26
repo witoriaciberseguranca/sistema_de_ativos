@@ -1,3 +1,18 @@
 {
-    "ativos": []
+    "ativos": [
+        {
+            "id": 2,
+            "hostname": "notebook rh",
+            "responsavel": "luiza",
+            "setor": "RH",
+            "tipo": "notebook",
+            "vulnerabilidades": [
+                {
+                    "descricao": "senha fraca",
+                    "severidade": "alta",
+                    "status": "aberta"
+                }
+            ]
+        }
+    ]
 }
