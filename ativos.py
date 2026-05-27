@@ -5,12 +5,16 @@ def cadastrar_ativo():
 
     dados = carregar_dados()
 
-    try:
-        id_ativo = int(input("ID do ativo: "))
+    if len(dados["ativos"]) == 0:
 
-    except ValueError:
-        print("ID inválido.")
-        return
+        id_ativo = 1 
+
+    else:
+         
+        ultimo_id = dados["ativos"][-1]["id"]
+        id_ativo = ultimo_id + 1
+
+    print(f"\nID de cadastro: {id_ativo}")
 
     hostname = input("Hostname: ")
     responsavel = input("Responsável: ")
