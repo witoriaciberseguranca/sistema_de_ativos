@@ -1,12 +1,3 @@
 {
-    "ativos": [
-        {
-            "id": 1,
-            "hostname": "",
-            "responsavel": "",
-            "setor": "",
-            "tipo": "",
-            "vulnerabilidades": []
-        }
-    ]
+    "ativos": []
 }
