@@ -1,3 +1,26 @@
 {
-    "ativos": []
+    "ativos": [
+        {
+            "id": 1,
+            "hostname": "notebook 2",
+            "responsavel": "joão",
+            "setor": "adm",
+            "tipo": "notebook",
+            "vulnerabilidades": [
+                {
+                    "descricao": "senha fraca",
+                    "severidade": "CRITICA",
+                    "status": "EM_TRATAMENTO"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "hostname": "servidor 1",
+            "responsavel": "luiz",
+            "setor": "adm",
+            "tipo": "servidor",
+            "vulnerabilidades": []
+        }
+    ]
 }
