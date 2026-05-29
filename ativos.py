@@ -1,4 +1,5 @@
 from json_utils import carregar_dados, salvar_dados
+from enums import Severidade, StatusVulnerabilidade
 
 
 def cadastrar_ativo():
@@ -16,10 +17,29 @@ def cadastrar_ativo():
 
     print(f"\nID de cadastro: {id_ativo}")
 
-    hostname = input("Hostname: ")
-    responsavel = input("Responsável: ")
-    setor = input("Setor: ")
-    tipo = input("Tipo do ativo: ")
+    hostname = input("Hostname: ").strip()
+
+    if not hostname:
+        print("Hostname não pode estar vazio. ")
+        return
+    
+    responsavel = input("Responsável: ").strip()
+
+    if not responsavel:
+        print("Responsável não pode estar vazio. ")
+        return
+    
+    setor = input("Setor: ").strip()
+
+    if not setor:
+        print("Setor não pode estar vazio. ")
+        return
+    
+    tipo = input("Tipo do ativo: ").strip()
+
+    if not tipo:
+        print("Tipo não pode estar vazio. ")
+        return
 
     novo_ativo = {
         "id": id_ativo,
@@ -128,14 +148,68 @@ def cadastrar_vulnerabilidade():
          
         if ativo["id"] == id_ativo:
         
-            descricao = input("Descreva a vulmerabilidade : ")
-            severidade = input("Severidade:")
-            status = input("Status:")
+            descricao = input("\nDescreva a vulnerabilidade : ").strip()
+            
+            if not descricao:
+                print("\nDescrição não pode estar vazia. ")
+                return
+            
+            print("\nSeveridades: ") 
+
+            for severidade in Severidade:
+
+                print(severidade.value, "-", severidade.name)
+                
+            opcao_severidade = input("\nEscolha o número referente: ").strip()
+
+            if not opcao_severidade.isdigit():
+
+                print("Digite apenas número. ")
+                return
+            
+            opcao_severidade = int(opcao_severidade)
+
+            severidade_escolha = severidade.name
+
+            if not severidade_escolha:
+
+                print("Severidade inválida. ")
+                return
+            
+
+
+            print("\nStatus: ") 
+
+            for status in StatusVulnerabilidade:
+
+                print(status.value, "-", status.name)
+
+            opcao_status = input("\nEscolha o status: ").strip()
+
+            if not opcao_status.isdigit():
+                print("Digite apenas número. ")
+                return
+            
+            opcao_status = int(opcao_status)
+
+            status_escolhido = None
+
+            for status in StatusVulnerabilidade:
+
+                if status.value == opcao_status:
+
+                    status_escolhido = status.name
+
+            if not status_escolhido:    
+                
+                print("Status inválido.")
+                return
+
 
             vulmerabilidade = {
                 "descricao": descricao,
-                "severidade": severidade,
-                "status": status
+                "severidade": severidade_escolha,
+                "status": status_escolhido
 
             }
 
@@ -145,6 +219,7 @@ def cadastrar_vulnerabilidade():
 
             print("\nVulnerabilidades cadastrada com sucesso.")
             return
+        
         
 def visualizar_vulnerabilidade():
         

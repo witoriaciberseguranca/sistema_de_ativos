@@ -9,7 +9,7 @@ while True:
     print("3 - Listar ativos")
     print("4 - Atualizar ativo")
     print("5 - Deletar ativo")
-    print("6 - cadatrar vulnerabilidade")
+    print("6 - cadastrar vulnerabilidade")
     print("7 - visualizar vulnerabilidades")
     print("8 - Sair")
 
